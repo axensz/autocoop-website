@@ -1,1 +1,85 @@
 @import "tailwindcss";
+
+/* AutoCoop Color Definitions */
+:root {
+  --autocoop-blue: #36317b;
+  --autocoop-yellow: #f9c01a;
+  --autocoop-white: #f7fafc;
+  --autocoop-gray: #edf2f7;
+}
+
+/* Tailwind Color Utilities */
+@layer utilities {
+  .text-autocoop-blue { color: #36317b; }
+  .text-autocoop-yellow { color: #f9c01a; }
+  .bg-autocoop-blue { background-color: #36317b; }
+  .bg-autocoop-yellow { background-color: #f9c01a; }
+  .bg-autocoop-gray { background-color: #edf2f7; }
+  .bg-autocoop-white { background-color: #f7fafc; }
+  .border-autocoop-blue { border-color: #36317b; }
+  .border-autocoop-yellow { border-color: #f9c01a; }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Ensure Font Awesome icons display correctly */
+.fas, .fab {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #36317b 0%, #4c46a8 100%);
+}
+
+.feature-card {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(54, 49, 123, 0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f9c01a 0%, #ffcd3c 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(249, 192, 26, 0.3);
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}

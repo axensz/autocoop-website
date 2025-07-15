@@ -1,0 +1,83 @@
+---
+// Header component for AutoCoop website
+---
+
+<header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+	<nav class="container mx-auto px-6 py-4">
+		<div class="flex items-center justify-between">
+			<!-- Logo -->
+			<div class="flex items-center space-x-3">
+				<div class="w-10 h-10 bg-autocoop-blue rounded-lg flex items-center justify-center">
+					<i class="fas fa-calculator text-white text-lg"></i>
+				</div>
+				<span class="text-2xl font-bold text-autocoop-blue">AutoCoop</span>
+			</div>
+			
+			<!-- Navigation -->
+			<div class="hidden md:flex items-center space-x-8">
+				<a href="#inicio" class="text-gray-700 hover:text-autocoop-blue transition-colors">Inicio</a>
+				<a href="#caracteristicas" class="text-gray-700 hover:text-autocoop-blue transition-colors">Características</a>
+				<a href="#descargas" class="text-gray-700 hover:text-autocoop-blue transition-colors">Descargas</a>
+				<a href="#contacto" class="text-gray-700 hover:text-autocoop-blue transition-colors">Contacto</a>
+			</div>
+			
+			<!-- Mobile Menu Button -->
+			<button id="mobile-menu-btn" class="md:hidden text-gray-700">
+				<i class="fas fa-bars text-xl"></i>
+			</button>
+		</div>
+		
+		<!-- Mobile Menu -->
+		<div id="mobile-menu" class="hidden md:hidden mt-4 py-4 border-t border-gray-200">
+			<a href="#inicio" class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Inicio</a>
+			<a href="#caracteristicas" class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Características</a>
+			<a href="#descargas" class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Descargas</a>
+			<a href="#contacto" class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Contacto</a>
+		</div>
+	</nav>
+</header>
+
+<script>
+	// Mobile Menu Toggle
+	const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+	const mobileMenu = document.getElementById('mobile-menu');
+	
+	if (mobileMenuBtn && mobileMenu) {
+		mobileMenuBtn.addEventListener('click', () => {
+			mobileMenu.classList.toggle('hidden');
+		});
+	}
+	
+	// Smooth Scrolling
+	document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+			const href = anchor.getAttribute('href');
+			const target = href ? document.querySelector(href) : null;
+			if (target) {
+				target.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				});
+			}
+			// Close mobile menu if open
+			if (mobileMenu) {
+				mobileMenu.classList.add('hidden');
+			}
+		});
+	});
+	
+	// Header Background on Scroll
+	window.addEventListener('scroll', () => {
+		const header = document.querySelector('header');
+		if (header) {
+			if (window.scrollY > 100) {
+				header.classList.add('bg-white/95');
+				header.classList.remove('bg-white/90');
+			} else {
+				header.classList.add('bg-white/90');
+				header.classList.remove('bg-white/95');
+			}
+		}
+	});
+</script>

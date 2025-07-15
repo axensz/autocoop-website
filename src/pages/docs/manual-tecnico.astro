@@ -1,0 +1,174 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Manual Técnico - AutoCoop" description="Documentación técnica detallada para administradores y desarrolladores de AutoCoop.">
+	<Header />
+	
+	<main class="pt-20 min-h-screen bg-white">
+		<div class="container mx-auto px-6 py-12">
+			<div class="max-w-4xl mx-auto">
+				<!-- Header -->
+				<div class="text-center mb-12">
+					<h1 class="text-4xl font-bold text-autocoop-blue mb-4">Manual Técnico</h1>
+					<p class="text-xl text-gray-600">Documentación técnica para administradores y desarrolladores</p>
+				</div>
+				
+				<!-- Download Button -->
+				<div class="text-center mb-12">
+					<a href="/manual-tecnico.pdf" download class="bg-gray-600 hover:bg-gray-700 text-white inline-flex items-center px-8 py-3 rounded-lg font-semibold transition-all">
+						<i class="fas fa-download mr-2"></i>
+						Descargar PDF Completo
+					</a>
+				</div>
+				
+				<!-- Table of Contents -->
+				<div class="bg-gray-50 rounded-lg p-8 mb-12">
+					<h2 class="text-2xl font-bold text-autocoop-blue mb-6">Tabla de Contenidos</h2>
+					<ul class="space-y-2 text-gray-700">
+						<li><a href="#arquitectura" class="hover:text-autocoop-blue transition-colors">1. Arquitectura del Sistema</a></li>
+						<li><a href="#tecnologias" class="hover:text-autocoop-blue transition-colors">2. Tecnologías Utilizadas</a></li>
+						<li><a href="#estructura" class="hover:text-autocoop-blue transition-colors">3. Estructura del Proyecto</a></li>
+						<li><a href="#desarrollo" class="hover:text-autocoop-blue transition-colors">4. Instalación de Desarrollo</a></li>
+						<li><a href="#base-datos" class="hover:text-autocoop-blue transition-colors">5. Base de Datos y Almacenamiento</a></li>
+						<li><a href="#apis" class="hover:text-autocoop-blue transition-colors">6. APIs y Servicios</a></li>
+						<li><a href="#build" class="hover:text-autocoop-blue transition-colors">7. Build y Deployment</a></li>
+						<li><a href="#configuracion" class="hover:text-autocoop-blue transition-colors">8. Configuración y Administración</a></li>
+					</ul>
+				</div>
+				
+				<!-- Content -->
+				<div class="prose prose-lg max-w-none">
+					<section id="arquitectura" class="mb-12">
+						<h2 class="text-3xl font-bold text-autocoop-blue mb-6">1. Arquitectura del Sistema</h2>
+						<p class="text-gray-700 mb-6">
+							AutoCoop está construido como una aplicación de escritorio usando Electron con una 
+							arquitectura modular y TypeScript.
+						</p>
+						
+						<h3 class="text-2xl font-semibold text-autocoop-blue mb-4">Componentes Principales</h3>
+						<div class="bg-gray-50 p-6 rounded-lg mb-6">
+							<pre class="text-sm text-gray-700 overflow-x-auto"><code>┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │   Main Process  │    │   File System  │
+│   (React)       │◄──►│   (Electron)    │◄──►│   (Local)       │
+│                 │    │                 │    │                 │
+│ - UI Components │    │ - Business      │    │ - JSON Storage  │
+│ - State Mgmt    │    │   Logic         │    │ - Excel/CSV     │
+│ - User Actions  │    │ - File I/O      │    │ - Exports       │
+└─────────────────┘    └─────────────────┘    └─────────────────┘</code></pre>
+						</div>
+						
+						<h3 class="text-2xl font-semibold text-autocoop-blue mb-4">Flujo de Datos</h3>
+						<ol class="list-decimal list-inside text-gray-700 space-y-2">
+							<li><strong>UI Layer</strong>: React components manejan la interfaz</li>
+							<li><strong>IPC Layer</strong>: Comunicación entre renderer y main process</li>
+							<li><strong>Business Layer</strong>: Lógica de negocio y procesamiento</li>
+							<li><strong>Data Layer</strong>: Almacenamiento local en JSON y archivos</li>
+						</ol>
+					</section>
+					
+					<section id="tecnologias" class="mb-12">
+						<h2 class="text-3xl font-bold text-autocoop-blue mb-6">2. Tecnologías Utilizadas</h2>
+						
+						<div class="grid md:grid-cols-2 gap-8">
+							<div class="bg-blue-50 p-6 rounded-lg">
+								<h3 class="text-xl font-semibold text-blue-800 mb-4">Core Technologies</h3>
+								<ul class="space-y-2 text-blue-700">
+									<li><strong>Electron</strong>: Framework para aplicaciones de escritorio</li>
+									<li><strong>TypeScript</strong>: Lenguaje principal de desarrollo</li>
+									<li><strong>React</strong>: Biblioteca para la interfaz de usuario</li>
+									<li><strong>Node.js</strong>: Runtime del proceso principal</li>
+								</ul>
+							</div>
+							
+							<div class="bg-green-50 p-6 rounded-lg">
+								<h3 class="text-xl font-semibold text-green-800 mb-4">Bibliotecas Principales</h3>
+								<ul class="space-y-2 text-green-700">
+									<li><strong>XLSX</strong>: Procesamiento de archivos Excel</li>
+									<li><strong>Fast-CSV</strong>: Manejo de archivos CSV</li>
+									<li><strong>UUID</strong>: Generación de identificadores únicos</li>
+									<li><strong>React-Toastify</strong>: Notificaciones de usuario</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					
+					<section id="estructura" class="mb-12">
+						<h2 class="text-3xl font-bold text-autocoop-blue mb-6">3. Estructura del Proyecto</h2>
+						<div class="bg-gray-50 p-6 rounded-lg">
+							<pre class="text-sm text-gray-700 overflow-x-auto"><code>autocoop/
+├── src/
+│   ├── main/           # Proceso principal (Electron)
+│   │   ├── index.ts
+│   │   ├── services/
+│   │   └── utils/
+│   ├── renderer/       # Proceso renderizador (React)
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   └── utils/
+│   └── shared/         # Código compartido
+│       ├── types/
+│       └── constants/
+├── resources/          # Recursos de la aplicación
+├── build/              # Scripts de construcción
+├── dist/               # Archivos compilados
+└── docs/               # Documentación</code></pre>
+						</div>
+					</section>
+					
+					<!-- Development Setup -->
+					<section id="desarrollo" class="mb-12">
+						<h2 class="text-3xl font-bold text-autocoop-blue mb-6">4. Instalación de Desarrollo</h2>
+						
+						<h3 class="text-2xl font-semibold text-autocoop-blue mb-4">Prerrequisitos</h3>
+						<ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+							<li>Node.js 18+ y npm</li>
+							<li>Git</li>
+							<li>Visual Studio Code (recomendado)</li>
+							<li>Windows 10/11 para desarrollo</li>
+						</ul>
+						
+						<h3 class="text-2xl font-semibold text-autocoop-blue mb-4">Pasos de Instalación</h3>
+						<div class="bg-gray-800 text-gray-100 p-6 rounded-lg mb-6">
+							<pre><code># 1. Clonar el repositorio
+git clone https://github.com/Kolark/Autocoop.git
+cd Autocoop
+
+# 2. Instalar dependencias
+npm install
+
+# 3. Iniciar en modo desarrollo
+npm run dev
+
+# 4. Construir para producción
+npm run build
+
+# 5. Crear instalador
+npm run dist</code></pre>
+						</div>
+					</section>
+					
+					<div class="text-center mt-12 p-8 bg-gray-50 rounded-lg">
+						<h3 class="text-2xl font-bold text-autocoop-blue mb-4">Documentación Completa</h3>
+						<p class="text-gray-600 mb-4">Descarga el manual técnico completo para acceder a todas las secciones de desarrollo</p>
+						<div class="flex flex-col sm:flex-row gap-4 justify-center">
+							<a href="/manual-tecnico.pdf" download class="bg-gray-600 hover:bg-gray-700 text-white inline-flex items-center px-6 py-3 rounded-lg font-semibold transition-all">
+								<i class="fas fa-download mr-2"></i>
+								Manual Técnico PDF
+							</a>
+							<a href="https://github.com/Kolark/Autocoop" target="_blank" class="border-2 border-autocoop-blue text-autocoop-blue hover:bg-autocoop-blue hover:text-white inline-flex items-center px-6 py-3 rounded-lg font-semibold transition-all">
+								<i class="fab fa-github mr-2"></i>
+								Ver en GitHub
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<Footer />
+</Layout>

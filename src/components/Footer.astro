@@ -1,0 +1,45 @@
+---
+// Footer component for AutoCoop website
+---
+
+<footer class="bg-autocoop-blue text-white">
+	<div class="container mx-auto px-6 py-8">
+		<div class="text-center">
+			<!-- Brand Section -->
+			<div class="mb-4">
+				<div class="flex items-center justify-center space-x-2 mb-2">
+					<div class="w-8 h-8 bg-autocoop-yellow rounded-lg flex items-center justify-center">
+						<span class="text-autocoop-blue font-bold">A</span>
+					</div>
+					<span class="text-xl font-bold">AutoCoop</span>
+				</div>
+				<p class="text-gray-300 text-sm mb-4 max-w-lg mx-auto">
+					Simplificando la gestión de pagos y conciliaciones para la 
+					Cooperativa Universitaria Bolivariana con tecnología moderna y confiable.
+				</p>
+			</div>
+		</div>
+		
+		<!-- Copyright Section -->
+		<div class="border-t border-gray-700 pt-4 text-center">
+			<div class="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
+				<p class="text-gray-300 text-sm">
+					© <span id="current-year"></span> AutoCoop. Todos los derechos reservados.
+				</p>
+				<div class="flex items-center space-x-2 text-sm">
+					<span class="text-gray-300">Hecho con</span>
+					<span class="text-red-400">♥</span>
+					<span class="text-gray-300">para cooperativas</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script>
+	// Set current year automatically
+	const yearElement = document.getElementById('current-year');
+	if (yearElement) {
+		yearElement.textContent = new Date().getFullYear().toString();
+	}
+</script>

@@ -1,0 +1,132 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Manual de Usuario - AutoCoop" description="Guía completa para usuarios finales de AutoCoop con instrucciones paso a paso.">
+	<Header />
+	
+	<main class="pt-20 min-h-screen bg-white">
+		<div class="container mx-auto px-6 py-12">
+			<div class="max-w-4xl mx-auto">
+				<!-- Header -->
+				<div class="text-center mb-12">
+					<h1 class="text-4xl font-bold text-[var(--autocoop-blue)] mb-4">Manual de Usuario</h1>
+					<p class="text-xl text-gray-600">Guía completa para aprovechar al máximo AutoCoop</p>
+				</div>
+				
+				<!-- Download Button -->
+				<div class="text-center mb-12">
+					<a href="/manual-usuario.pdf" download class="btn-primary inline-flex items-center px-8 py-3 rounded-lg font-semibold text-[var(--autocoop-blue)]">
+						<i class="fas fa-download mr-2"></i>
+						Descargar PDF Completo
+					</a>
+				</div>
+				
+				<!-- Table of Contents -->
+				<div class="bg-[var(--autocoop-gray)] rounded-lg p-8 mb-12">
+					<h2 class="text-2xl font-bold text-[var(--autocoop-blue)] mb-6">Tabla de Contenidos</h2>
+					<ul class="space-y-2 text-gray-700">
+						<li><a href="#introduccion" class="hover:text-[var(--autocoop-blue)] transition-colors">1. Introducción</a></li>
+						<li><a href="#instalacion" class="hover:text-[var(--autocoop-blue)] transition-colors">2. Instalación</a></li>
+						<li><a href="#primeros-pasos" class="hover:text-[var(--autocoop-blue)] transition-colors">3. Primeros Pasos</a></li>
+						<li><a href="#funciones-principales" class="hover:text-[var(--autocoop-blue)] transition-colors">4. Funciones Principales</a></li>
+						<li><a href="#conciliaciones" class="hover:text-[var(--autocoop-blue)] transition-colors">5. Conciliaciones</a></li>
+						<li><a href="#empresas" class="hover:text-[var(--autocoop-blue)] transition-colors">6. Empresas</a></li>
+						<li><a href="#reportes" class="hover:text-[var(--autocoop-blue)] transition-colors">7. Reportes</a></li>
+						<li><a href="#solucion-problemas" class="hover:text-[var(--autocoop-blue)] transition-colors">8. Solución de Problemas</a></li>
+					</ul>
+				</div>
+				
+				<!-- Content -->
+				<div class="prose prose-lg max-w-none">
+					<section id="introduccion" class="mb-12">
+						<h2 class="text-3xl font-bold text-[var(--autocoop-blue)] mb-6">1. Introducción</h2>
+						<p class="text-gray-700 mb-4">
+							AutoCoop es una aplicación de escritorio diseñada para simplificar la gestión y conciliación 
+							de pagos y obligaciones financieras en cooperativas. Esta guía te ayudará a aprovechar al 
+							máximo todas sus funcionalidades.
+						</p>
+						
+						<h3 class="text-2xl font-semibold text-[var(--autocoop-blue)] mb-4">¿Qué hace AutoCoop?</h3>
+						<ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+							<li><strong>Importa</strong> archivos Excel y CSV con datos financieros</li>
+							<li><strong>Concilia</strong> automáticamente pagos y obligaciones</li>
+							<li><strong>Genera</strong> reportes detallados y exporta resultados</li>
+							<li><strong>Gestiona</strong> múltiples empresas desde una sola aplicación</li>
+							<li><strong>Automatiza</strong> procesos que antes tomaban horas</li>
+						</ul>
+					</section>
+					
+					<section id="instalacion" class="mb-12">
+						<h2 class="text-3xl font-bold text-[var(--autocoop-blue)] mb-6">2. Instalación</h2>
+						
+						<h3 class="text-2xl font-semibold text-[var(--autocoop-blue)] mb-4">Requisitos del Sistema</h3>
+						<div class="grid md:grid-cols-2 gap-8 mb-6">
+							<div class="bg-green-50 p-6 rounded-lg">
+								<h4 class="font-semibold text-green-800 mb-3">Mínimos</h4>
+								<ul class="space-y-2 text-green-700">
+									<li><i class="fas fa-check mr-2"></i>Windows 10 (64-bit)</li>
+									<li><i class="fas fa-check mr-2"></i>4 GB RAM</li>
+									<li><i class="fas fa-check mr-2"></i>500 MB espacio libre</li>
+									<li><i class="fas fa-check mr-2"></i>Microsoft Office (opcional)</li>
+								</ul>
+							</div>
+							<div class="bg-blue-50 p-6 rounded-lg">
+								<h4 class="font-semibold text-blue-800 mb-3">Recomendados</h4>
+								<ul class="space-y-2 text-blue-700">
+									<li><i class="fas fa-check mr-2"></i>Windows 11 (64-bit)</li>
+									<li><i class="fas fa-check mr-2"></i>8 GB RAM o más</li>
+									<li><i class="fas fa-check mr-2"></i>1 GB espacio libre</li>
+									<li><i class="fas fa-check mr-2"></i>Conexión a internet</li>
+								</ul>
+							</div>
+						</div>
+						
+						<h3 class="text-2xl font-semibold text-[var(--autocoop-blue)] mb-4">Proceso de Instalación</h3>
+						<ol class="list-decimal list-inside text-gray-700 space-y-2">
+							<li><strong>Descarga</strong> el instalador desde el sitio oficial</li>
+							<li><strong>Ejecuta</strong> el archivo <code class="bg-gray-100 px-2 py-1 rounded">AutoCoop-Setup.exe</code></li>
+							<li><strong>Sigue</strong> las instrucciones del asistente de instalación</li>
+							<li><strong>Inicia</strong> la aplicación desde el escritorio o menú de inicio</li>
+						</ol>
+					</section>
+					
+					<section id="primeros-pasos" class="mb-12">
+						<h2 class="text-3xl font-bold text-[var(--autocoop-blue)] mb-6">3. Primeros Pasos</h2>
+						
+						<h3 class="text-2xl font-semibold text-[var(--autocoop-blue)] mb-4">Primera Ejecución</h3>
+						<p class="text-gray-700 mb-4">Al abrir AutoCoop por primera vez:</p>
+						<ol class="list-decimal list-inside text-gray-700 space-y-2 mb-6">
+							<li><strong>Configuración inicial</strong>: Establece la ruta de exportación de archivos</li>
+							<li><strong>Crear empresa</strong>: Registra tu primera empresa/cooperativa</li>
+							<li><strong>Importar datos</strong>: Carga tu primer archivo de datos</li>
+						</ol>
+						
+						<h3 class="text-2xl font-semibold text-[var(--autocoop-blue)] mb-4">Interfaz Principal</h3>
+						<p class="text-gray-700 mb-4">La interfaz está dividida en secciones principales:</p>
+						<ul class="list-disc list-inside text-gray-700 space-y-2">
+							<li><strong>Panel lateral</strong>: Navegación entre funciones</li>
+							<li><strong>Área principal</strong>: Visualización de datos y formularios</li>
+							<li><strong>Barra de estado</strong>: Información sobre el estado actual</li>
+						</ul>
+					</section>
+					
+					<!-- More sections can be added here -->
+					
+					<div class="text-center mt-12 p-8 bg-[var(--autocoop-gray)] rounded-lg">
+						<h3 class="text-2xl font-bold text-[var(--autocoop-blue)] mb-4">¿Necesitas más ayuda?</h3>
+						<p class="text-gray-600 mb-4">Descarga el manual completo en PDF para acceder a todas las secciones</p>
+						<a href="/manual-usuario.pdf" download class="btn-primary inline-flex items-center px-6 py-3 rounded-lg font-semibold text-[var(--autocoop-blue)]">
+							<i class="fas fa-download mr-2"></i>
+							Descargar Manual Completo
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<Footer />
+</Layout>

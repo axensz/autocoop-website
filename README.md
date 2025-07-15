@@ -1,52 +1,150 @@
-# Astro Starter Kit: Basics
+# AutoCoop Website
 
-```sh
-npm create astro@latest -- --template basics
+Sitio web oficial de AutoCoop - Aplicación de gestión y conciliación de pagos cooperativos.
+
+## 🌟 Sobre AutoCoop
+
+AutoCoop es una aplicación de escritorio diseñada para simplificar la gestión y conciliación de pagos y obligaciones financieras en cooperativas, ahorrando tiempo y reduciendo errores mediante automatización inteligente.
+
+## 🚀 Características del Sitio Web
+
+- **Astro + Tailwind CSS**: Framework moderno para máximo rendimiento
+- **Diseño Responsive**: Adaptado para todos los dispositivos
+- **Componentes Modulares**: Arquitectura escalable y mantenible  
+- **SEO Optimizado**: Meta tags y estructura semántica
+- **Animaciones Suaves**: Experiencia de usuario atractiva
+- **Documentación Integrada**: Manuales de usuario y técnico
+
+## 🎨 Colores de Marca
+
+- **Azul Principal**: `#36317b` (autocoop-blue)
+- **Amarillo**: `#f9c01a` (autocoop-yellow)  
+- **Blanco**: `#f7fafc` (autocoop-white)
+- **Gris Claro**: `#edf2f7` (autocoop-gray)
+
+## 📁 Estructura del Proyecto
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── public/             # Archivos estáticos
+├── src/
+│   ├── components/     # Componentes Astro reutilizables
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   ├── Features.astro
+│   │   ├── Downloads.astro
+│   │   ├── Contact.astro
+│   │   └── Footer.astro
+│   ├── layouts/        # Layouts base
+│   │   └── Layout.astro
+│   └── pages/          # Páginas del sitio
+│       ├── index.astro
+│       └── docs/       # Documentación
+│           ├── manual-usuario.astro
+│           └── manual-tecnico.astro
+├── astro.config.mjs    # Configuración de Astro
+├── tailwind.config.mjs # Configuración de Tailwind
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🛠️ Tecnologías Utilizadas
 
-## 🧞 Commands
+- **[Astro](https://astro.build/)**: Framework web moderno y rápido
+- **[Tailwind CSS](https://tailwindcss.com/)**: Framework CSS utilitario
+- **[TypeScript](https://www.typescriptlang.org/)**: Tipado estático
+- **[Font Awesome](https://fontawesome.com/)**: Iconografía
+- **[Google Fonts (Inter)](https://fonts.google.com/)**: Tipografía
 
-All commands are run from the root of the project, from a terminal:
+## 🧞 Comandos de Desarrollo
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Todos los comandos se ejecutan desde la raíz del proyecto:
 
-## 👀 Want to learn more?
+| Comando                | Acción                                         |
+| :--------------------- | :--------------------------------------------- |
+| `npm install`          | Instala las dependencias                      |
+| `npm run dev`          | Inicia el servidor de desarrollo              |
+| `npm run build`        | Construye el sitio para producción            |
+| `npm run preview`      | Vista previa del build local                  |
+| `npm run astro ...`    | Ejecuta comandos CLI de Astro                 |
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🚀 Instalación y Desarrollo
+
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/axensz/autocoop-website.git
+   cd autocoop-website
+   ```
+
+2. **Instalar dependencias**
+   ```bash
+   npm install
+   ```
+
+3. **Iniciar servidor de desarrollo**
+   ```bash
+   npm run dev
+   ```
+
+4. **Abrir en el navegador**
+   ```
+   http://localhost:4321
+   ```
+
+## 📱 Responsive Design
+
+El sitio está optimizado para:
+- 📱 Móviles (320px+)
+- 📱 Tablets (768px+) 
+- 💻 Desktop (1024px+)
+- 🖥️ Large screens (1280px+)
+
+## 🔗 Enlaces Importantes
+
+- **Aplicación AutoCoop**: [GitHub Repository](https://github.com/Kolark/Autocoop)
+- **Releases**: [Descargas](https://github.com/Kolark/Autocoop/releases)
+- **Documentación**: Disponible en `/docs/` del sitio web
+
+## 📈 Deployment
+
+El sitio está preparado para desplegarse en:
+
+- **Netlify** (recomendado)
+- **Vercel** 
+- **GitHub Pages**
+- **Cloudflare Pages**
+
+### Configuración para Netlify
+
+```toml
+# netlify.toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+```
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Por favor:
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## 📧 Contacto
+
+- **Email**: soporte@autocoop.com
+- **GitHub**: [@axensz](https://github.com/axensz)
+- **Proyecto**: [autocoop-website](https://github.com/axensz/autocoop-website)
+
+---
+
+**Desarrollado con ❤️ para cooperativas** 🚀
