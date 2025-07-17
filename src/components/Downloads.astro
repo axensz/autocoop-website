@@ -1,6 +1,9 @@
 ---
 // Downloads section component for AutoCoop website
 import { downloadInfo } from '../data/download-info.ts';
+
+// Use Astro.site to build correct URL
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <section id="descargas" class="py-20 bg-autocoop-gray">
@@ -36,7 +39,7 @@ import { downloadInfo } from '../data/download-info.ts';
 								<span>📅 Versión: {downloadInfo.version}</span>
 							</div>
 						</div>
-						<a href="/autocoop-website/descarga-win" class="btn-primary px-8 py-4 rounded-lg font-semibold text-autocoop-blue hover:text-autocoop-blue inline-flex items-center">
+						<a href={`${baseUrl}descarga-win`} class="btn-primary px-8 py-4 rounded-lg font-semibold text-autocoop-blue hover:text-autocoop-blue inline-flex items-center">
 							<i class="fas fa-download mr-2"></i>
 							Descargar para Windows
 						</a>
