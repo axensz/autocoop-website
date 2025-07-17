@@ -10,28 +10,28 @@ export const downloadInfo = {
   // Release notes
   releaseNotes: {
     newFeatures: [
-      "🎉 Primera versión oficial de AutoCoop disponible para el público",
-      "💼 Gestiona múltiples empresas con sistemas de nómina mensual y quincenal",
-      "📊 Importa archivos Excel de forma automática con validación inteligente",
-      "🔍 Filtra y busca información por mes, año y estado de envío",
-      "📈 Genera reportes profesionales exportables a Excel",
-      "✅ Lista de verificación para seguimiento completo de procesos",
-      "⚙️ Panel de configuración personalizable según tus necesidades",
-      "🛡️ Validaciones automáticas para evitar errores en los datos",
-      "💾 Almacenamiento seguro de toda tu información localmente"
+      " Primera versión oficial de AutoCoop disponible para el público",
+      " Gestiona múltiples empresas con sistemas de nómina mensual y quincenal",
+      " Importa archivos Excel de forma automática con validación inteligente",
+      " Filtra y busca información por mes, año y estado de envío",
+      " Genera reportes profesionales exportables a Excel",
+      " Lista de verificación para seguimiento completo de procesos",
+      " Panel de configuración personalizable según tus necesidades",
+      " Validaciones automáticas para evitar errores en los datos",
+      " Almacenamiento seguro de toda tu información localmente"
     ],
     improvements: [
-      "🎨 Interfaz moderna y fácil de usar",
-      "⚡ Rendimiento optimizado para archivos grandes",
-      "🔄 Navegación intuitiva entre diferentes secciones",
-      "📱 Diseño responsivo que se adapta a tu pantalla",
-      "🎯 Notificaciones claras sobre el estado de tus procesos"
+      " Interfaz moderna y fácil de usar",
+      " Rendimiento optimizado para archivos grandes",
+      " Navegación intuitiva entre diferentes secciones",
+      " Diseño responsivo que se adapta a tu pantalla",
+      " Notificaciones claras sobre el estado de tus procesos"
     ],
     bugFixes: [
-      "✨ Primera versión estable - sin errores conocidos",
-      "🔧 Validación mejorada durante la importación de archivos",
-      "💪 Mayor estabilidad en el procesamiento de datos",
-      "🚀 Optimización de velocidad para operaciones complejas"
+      " Primera versión estable - sin errores conocidos",
+      " Validación mejorada durante la importación de archivos",
+      " Mayor estabilidad en el procesamiento de datos",
+      " Optimización de velocidad para operaciones complejas"
     ]
   },
   
@@ -56,7 +56,7 @@ export const downloadInfo = {
     userManual: {
       title: "Manual de Usuario",
       filename: "Manual de Usuario - Autocoop.pdf",
-      path: "/docs/Manual de Usuario - Autocoop.pdf"
+      path: "https://drive.google.com/file/d/17woZGx52kP0AWJcVoNU-Y_VxSpqz0ITj/view?usp=sharing"
     },
     technicalManual: {
       title: "Manual Técnico", 
