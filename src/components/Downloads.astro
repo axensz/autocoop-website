@@ -2,8 +2,8 @@
 // Downloads section component for AutoCoop website
 import { downloadInfo } from '../data/download-info.ts';
 
-// Use Astro.site to build correct URL
-const baseUrl = import.meta.env.BASE_URL;
+// Ensure proper URL formation for GitHub Pages
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 ---
 
 <section id="descargas" class="py-20 bg-autocoop-gray">
