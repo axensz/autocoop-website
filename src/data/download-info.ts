@@ -56,7 +56,7 @@ export const downloadInfo = {
     userManual: {
       title: "Manual de Usuario",
       filename: "Manual de Usuario - Autocoop.pdf",
-      path: "https://drive.google.com/file/d/17woZGx52kP0AWJcVoNU-Y_VxSpqz0ITj/view?usp=sharing"
+      path: "https://drive.google.com/uc?export=download&id=17woZGx52kP0AWJcVoNU-Y_VxSpqz0ITj"
     },
     technicalManual: {
       title: "Manual Técnico", 

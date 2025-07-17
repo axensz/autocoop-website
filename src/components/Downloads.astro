@@ -76,7 +76,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
 					Documentación
 				</h3>
 				<div class="flex flex-col sm:flex-row justify-center items-center gap-8 max-w-4xl mx-auto">
-					<a href={downloadInfo.documentation.userManual.path.startsWith('http') ? downloadInfo.documentation.userManual.path : `${baseUrl.slice(0, -1)}${downloadInfo.documentation.userManual.path}`} class="flex items-center space-x-3 p-3 hover:opacity-80 transition-all whitespace-nowrap" target="_blank" rel="noopener noreferrer">
+					<a href={downloadInfo.documentation.userManual.path.startsWith('http') ? downloadInfo.documentation.userManual.path : `${baseUrl.slice(0, -1)}${downloadInfo.documentation.userManual.path}`} class="flex items-center space-x-3 p-3 hover:opacity-80 transition-all whitespace-nowrap" download>
 						<div class="text-autocoop-blue text-xl">
 							<i class="fas fa-file-pdf"></i>
 						</div>
