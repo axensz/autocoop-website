@@ -76,18 +76,18 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
 					Documentación
 				</h3>
 				<div class="flex flex-col sm:flex-row justify-center items-center gap-8 max-w-4xl mx-auto">
-					<a href="/docs/Manual de Usuario - Autocoop.pdf" class="flex items-center space-x-3 p-3 hover:opacity-80 transition-all whitespace-nowrap" download>
+					<a href={`${baseUrl.slice(0, -1)}${downloadInfo.documentation.userManual.path}`} class="flex items-center space-x-3 p-3 hover:opacity-80 transition-all whitespace-nowrap" download>
 						<div class="text-autocoop-blue text-xl">
 							<i class="fas fa-file-pdf"></i>
 						</div>
-						<span class="text-autocoop-blue font-semibold">Manual de Usuario</span>
+						<span class="text-autocoop-blue font-semibold">{downloadInfo.documentation.userManual.title}</span>
 						<span class="text-gray-600 text-sm">(PDF)</span>
 					</a>
-					<a href="/docs/manual-tecnico.pdf" class="flex items-center space-x-3 p-3 hover:opacity-80 transition-all whitespace-nowrap" download>
+					<a href={`${baseUrl.slice(0, -1)}${downloadInfo.documentation.technicalManual.path}`} class="flex items-center space-x-3 p-3 hover:opacity-80 transition-all whitespace-nowrap" download>
 						<div class="text-autocoop-blue text-xl">
 							<i class="fas fa-file-pdf"></i>
 						</div>
-						<span class="text-autocoop-blue font-semibold">Manual Técnico</span>
+						<span class="text-autocoop-blue font-semibold">{downloadInfo.documentation.technicalManual.title}</span>
 						<span class="text-gray-600 text-sm">(PDF)</span>
 					</a>
 				</div>

@@ -2,24 +2,33 @@
 // Header component for AutoCoop website
 import { Image } from 'astro:assets';
 import iconImage from '../assets/icon.png';
+
+// Detect if we're on the home page or another page
+const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '/autocoop-website/' || Astro.url.pathname.endsWith('/');
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+
+// Build navigation links based on current page
+const homeLink = isHomePage ? '#inicio' : baseUrl;
+const featuresLink = isHomePage ? '#caracteristicas' : `${baseUrl}#caracteristicas`;
+const downloadsLink = isHomePage ? '#descargas' : `${baseUrl}#descargas`;
 ---
 
 <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
 	<nav class="container mx-auto px-6 py-4">
 		<div class="flex items-center justify-between">
 			<!-- Logo -->
-			<div class="flex items-center space-x-3">
+			<a href={homeLink} class="flex items-center space-x-3 hover:opacity-80 transition-opacity">
 				<div class="w-10 h-10 flex items-center justify-center">
 					<Image src={iconImage} alt="AutoCoop icon" class="w-8 h-8" width={32} height={32} loading="eager" />
 				</div>
 				<span class="text-2xl font-bold text-autocoop-blue">AutoCoop</span>
-			</div>
+			</a>
 			
 			<!-- Navigation -->
 			<div class="hidden md:flex items-center space-x-8">
-				<a href="#inicio" class="text-gray-700 hover:text-autocoop-blue transition-colors">Inicio</a>
-				<a href="#caracteristicas" class="text-gray-700 hover:text-autocoop-blue transition-colors">Características</a>
-				<a href="#descargas" class="text-gray-700 hover:text-autocoop-blue transition-colors">Descargas</a>
+				<a href={homeLink} class="text-gray-700 hover:text-autocoop-blue transition-colors">Inicio</a>
+				<a href={featuresLink} class="text-gray-700 hover:text-autocoop-blue transition-colors">Características</a>
+				<a href={downloadsLink} class="text-gray-700 hover:text-autocoop-blue transition-colors">Descargas</a>
 			</div>
 			
 			<!-- Mobile Menu Button -->
@@ -30,9 +39,9 @@ import iconImage from '../assets/icon.png';
 		
 		<!-- Mobile Menu -->
 		<div id="mobile-menu" class="hidden md:hidden mt-4 py-4 border-t border-gray-200">
-			<a href="#inicio" class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Inicio</a>
-			<a href="#caracteristicas" class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Características</a>
-			<a href="#descargas" class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Descargas</a>
+			<a href={homeLink} class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Inicio</a>
+			<a href={featuresLink} class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Características</a>
+			<a href={downloadsLink} class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Descargas</a>
 		</div>
 	</nav>
 </header>
