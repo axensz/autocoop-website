@@ -1,5 +1,7 @@
 ---
 // Footer component for AutoCoop website
+import { Image } from 'astro:assets';
+import iconImage from '../assets/icon.png';
 ---
 
 <footer class="bg-autocoop-blue text-white">
@@ -8,7 +10,7 @@
 			<!-- Brand Section -->
 			<div class="mb-4">
 				<div class="flex items-center justify-center space-x-2 mb-2">
-					<img src="/src/assets/icon.png" alt="AutoCoop icon" class="w-8 h-8" />
+					<Image src={iconImage} alt="AutoCoop icon" class="w-8 h-8" width={32} height={32} loading="lazy" />
 					<span class="text-xl font-bold">AutoCoop</span>
 				</div>
 				<p class="text-gray-300 text-sm mb-4 max-w-lg mx-auto">

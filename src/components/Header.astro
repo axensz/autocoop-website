@@ -1,5 +1,7 @@
 ---
 // Header component for AutoCoop website
+import { Image } from 'astro:assets';
+import iconImage from '../assets/icon.png';
 ---
 
 <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
@@ -8,7 +10,7 @@
 			<!-- Logo -->
 			<div class="flex items-center space-x-3">
 				<div class="w-10 h-10 flex items-center justify-center">
-					<img src="/src/assets/icon.png" alt="AutoCoop icon" class="w-8 h-8" />
+					<Image src={iconImage} alt="AutoCoop icon" class="w-8 h-8" width={32} height={32} loading="eager" />
 				</div>
 				<span class="text-2xl font-bold text-autocoop-blue">AutoCoop</span>
 			</div>
@@ -18,7 +20,6 @@
 				<a href="#inicio" class="text-gray-700 hover:text-autocoop-blue transition-colors">Inicio</a>
 				<a href="#caracteristicas" class="text-gray-700 hover:text-autocoop-blue transition-colors">Características</a>
 				<a href="#descargas" class="text-gray-700 hover:text-autocoop-blue transition-colors">Descargas</a>
-				<a href="#contacto" class="text-gray-700 hover:text-autocoop-blue transition-colors">Preguntas</a>
 			</div>
 			
 			<!-- Mobile Menu Button -->
@@ -32,7 +33,6 @@
 			<a href="#inicio" class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Inicio</a>
 			<a href="#caracteristicas" class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Características</a>
 			<a href="#descargas" class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Descargas</a>
-			<a href="#contacto" class="block py-2 text-gray-700 hover:text-autocoop-blue transition-colors">Preguntas</a>
 		</div>
 	</nav>
 </header>

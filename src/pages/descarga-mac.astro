@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Descarga AutoCoop para macOS - Gestión de Nóminas">
+	<Header />
+	
+	<!-- Download Page -->
+	<section class="py-20 bg-autocoop-gray min-h-screen">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<!-- Download Status -->
+				<div class="bg-white rounded-2xl p-8 shadow-lg border border-autocoop-gray mb-8 text-center">
+					<div class="mb-6">
+						<div class="w-24 h-24 bg-autocoop-blue rounded-full flex items-center justify-center mx-auto mb-4">
+							<i class="fab fa-apple text-3xl text-white"></i>
+						</div>
+						<h1 class="text-3xl font-bold text-autocoop-blue mb-2">Descargando AutoCoop para macOS</h1>
+						<p class="text-gray-600">Tu descarga comenzará automáticamente en unos segundos...</p>
+					</div>
+					
+					<!-- Progress Bar -->
+					<div class="bg-autocoop-gray rounded-full h-3 mb-4">
+						<div id="progress-bar" class="bg-autocoop-yellow rounded-full h-3 transition-all duration-300" style="width: 0%"></div>
+					</div>
+					
+					<!-- Download Info -->
+					<div class="grid md:grid-cols-3 gap-4 text-sm text-gray-600 mb-6">
+						<div>
+							<strong>Archivo:</strong> AutoCoop-v2.1.0.dmg
+						</div>
+						<div>
+							<strong>Tamaño:</strong> ~180 MB
+						</div>
+						<div>
+							<strong>Versión:</strong> 2.1.0
+						</div>
+					</div>
+					
+					<!-- Manual Download Link -->
+					<div class="border-t border-autocoop-gray pt-6">
+						<p class="text-gray-600 mb-4">¿No se inició la descarga automáticamente?</p>
+						<a href="#" id="manual-download" class="btn-primary px-6 py-3 rounded-lg font-semibold text-autocoop-blue hover:text-autocoop-blue inline-flex items-center">
+							<i class="fas fa-download mr-2"></i>
+							Descargar Manualmente
+						</a>
+					</div>
+				</div>
+				
+				<!-- Release Notes -->
+				<div class="bg-white rounded-2xl p-8 shadow-lg border border-autocoop-gray">
+					<h2 class="text-2xl font-bold text-autocoop-blue mb-6">
+						<i class="fas fa-clipboard-list mr-2"></i>
+						Notas de la Versión 2.1.0 - macOS
+					</h2>
+					
+					<!-- New Features -->
+					<div class="mb-6">
+						<h3 class="text-lg font-semibold text-autocoop-blue mb-3 flex items-center">
+							<span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs mr-2">NUEVO</span>
+							Nuevas Características
+						</h3>
+						<ul class="space-y-2 text-gray-600">
+							<li class="flex items-start">
+								<i class="fas fa-plus-circle text-green-500 mt-1 mr-2"></i>
+								Soporte nativo para Apple Silicon (M1, M2, M3)
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-plus-circle text-green-500 mt-1 mr-2"></i>
+								Integración con Spotlight para búsqueda rápida
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-plus-circle text-green-500 mt-1 mr-2"></i>
+								Soporte para archivos Numbers además de Excel
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-plus-circle text-green-500 mt-1 mr-2"></i>
+								Exportación optimizada para Preview en macOS
+							</li>
+						</ul>
+					</div>
+					
+					<!-- Improvements -->
+					<div class="mb-6">
+						<h3 class="text-lg font-semibold text-autocoop-blue mb-3 flex items-center">
+							<span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs mr-2">MEJORADO</span>
+							Mejoras
+						</h3>
+						<ul class="space-y-2 text-gray-600">
+							<li class="flex items-start">
+								<i class="fas fa-arrow-up text-blue-500 mt-1 mr-2"></i>
+								Interfaz adaptada a las pautas de diseño de macOS
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-arrow-up text-blue-500 mt-1 mr-2"></i>
+								Mejor gestión de memoria en sistemas Apple Silicon
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-arrow-up text-blue-500 mt-1 mr-2"></i>
+								Soporte completo para modo oscuro
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-arrow-up text-blue-500 mt-1 mr-2"></i>
+								Integración con Keychain para almacenar configuraciones
+							</li>
+						</ul>
+					</div>
+					
+					<!-- Bug Fixes -->
+					<div class="mb-6">
+						<h3 class="text-lg font-semibold text-autocoop-blue mb-3 flex items-center">
+							<span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs mr-2">CORREGIDO</span>
+							Correcciones
+						</h3>
+						<ul class="space-y-2 text-gray-600">
+							<li class="flex items-start">
+								<i class="fas fa-bug text-red-500 mt-1 mr-2"></i>
+								Solucionado problema de compatibilidad con macOS Ventura
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-bug text-red-500 mt-1 mr-2"></i>
+								Corregida la exportación de archivos con caracteres especiales
+							</li>
+							<li class="flex items-start">
+								<i class="fas fa-bug text-red-500 mt-1 mr-2"></i>
+								Mejorada la estabilidad en sistemas con múltiples pantallas
+							</li>
+						</ul>
+					</div>
+					
+					<!-- System Requirements -->
+					<div class="border-t border-autocoop-gray pt-6">
+						<h3 class="text-lg font-semibold text-autocoop-blue mb-3">Requisitos del Sistema</h3>
+						<div class="grid md:grid-cols-2 gap-4 text-sm">
+							<div>
+								<h4 class="font-semibold text-gray-700 mb-2">Mínimos:</h4>
+								<ul class="space-y-1 text-gray-600">
+									<li>• macOS 11.0 Big Sur o superior</li>
+									<li>• 4 GB RAM</li>
+									<li>• 500 MB espacio libre</li>
+									<li>• Procesador Intel o Apple Silicon</li>
+								</ul>
+							</div>
+							<div>
+								<h4 class="font-semibold text-gray-700 mb-2">Recomendados:</h4>
+								<ul class="space-y-1 text-gray-600">
+									<li>• macOS 14 Sonoma o superior</li>
+									<li>• 8 GB RAM o más</li>
+									<li>• SSD para mejor rendimiento</li>
+									<li>• Microsoft Excel o Numbers instalado</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Support Info -->
+					<div class="bg-autocoop-gray rounded-lg p-4 mt-6">
+						<div class="flex items-start space-x-3">
+							<i class="fas fa-info-circle text-autocoop-blue mt-1"></i>
+							<div>
+								<h4 class="font-semibold text-autocoop-blue mb-1">¿Necesitas ayuda?</h4>
+								<p class="text-gray-600 text-sm">
+									Consulta los manuales de usuario y técnico en la sección de documentación, 
+									o contacta al equipo de soporte si encuentras algún problema con la versión para macOS.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Back to Home -->
+				<div class="text-center mt-8">
+					<a href="/" class="text-autocoop-blue hover:text-autocoop-blue font-semibold">
+						<i class="fas fa-arrow-left mr-2"></i>
+						Volver al inicio
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<Footer />
+	
+	<!-- Download Script -->
+	<script>
+		// Progress bar animation
+		function animateProgress() {
+			const progressBar = document.getElementById('progress-bar');
+			let width = 0;
+			const interval = setInterval(() => {
+				if (width >= 100) {
+					clearInterval(interval);
+					// Show completion message
+					document.querySelector('h1').textContent = '¡Descarga Completada!';
+					document.querySelector('h1 + p').textContent = 'AutoCoop para macOS se ha descargado exitosamente.';
+				} else {
+					width += Math.random() * 15 + 5; // Random increment between 5-20
+					if (width > 100) width = 100;
+					progressBar.style.width = width + '%';
+				}
+			}, 800); // Update every 800ms
+		}
+		
+		// Start download simulation
+		setTimeout(() => {
+			animateProgress();
+		}, 1000);
+		
+		// Manual download click handler
+		document.getElementById('manual-download').addEventListener('click', (e) => {
+			e.preventDefault();
+			// Here you would trigger the actual download
+			// For now, just restart the animation
+			document.getElementById('progress-bar').style.width = '0%';
+			setTimeout(animateProgress, 500);
+		});
+		
+		// Auto-redirect after completion (optional)
+		setTimeout(() => {
+			// Here you could redirect back to home or show next steps
+		}, 10000);
+	</script>
+</Layout>

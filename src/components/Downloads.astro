@@ -1,5 +1,6 @@
 ---
 // Downloads section component for AutoCoop website
+import { downloadInfo } from '../data/download-info.ts';
 ---
 
 <section id="descargas" class="py-20 bg-autocoop-gray">
@@ -10,7 +11,7 @@
 			</h2>
 			<p class="text-xl text-gray-600 max-w-3xl mx-auto">
 				Obtén AutoCoop de forma gratuita y comienza a optimizar la gestión 
-				de tu cooperativa hoy mismo. Disponible para Windows y próximamente en otras plataformas.
+				de tu cooperativa hoy mismo. Disponible  Windows y próximamente en otras plataformas.
 			</p>
 		</div>
 		
@@ -31,11 +32,11 @@
 						</p>
 						<div class="text-sm text-gray-500 mb-6">
 							<div class="flex items-center justify-center space-x-4">
-								<span>📁 Tamaño: ~150 MB</span>
-								<span>📅 Versión: 2.1.0</span>
+								<span>📁 Tamaño: {downloadInfo.size}</span>
+								<span>📅 Versión: {downloadInfo.version}</span>
 							</div>
 						</div>
-						<a href="#" class="btn-primary px-8 py-4 rounded-lg font-semibold text-autocoop-blue hover:text-autocoop-blue inline-flex items-center">
+						<a href="/descarga-win" class="btn-primary px-8 py-4 rounded-lg font-semibold text-autocoop-blue hover:text-autocoop-blue inline-flex items-center">
 							<i class="fas fa-download mr-2"></i>
 							Descargar para Windows
 						</a>
@@ -63,6 +64,29 @@
 							Próximamente
 						</button>
 					</div>
+				</div>
+			</div>
+			
+			<!-- Manuals Section -->
+			<div class="mb-8">
+				<h3 class="text-2xl font-bold text-autocoop-blue mb-6 text-center">
+					Documentación
+				</h3>
+				<div class="flex flex-col sm:flex-row justify-center items-center gap-8 max-w-4xl mx-auto">
+					<a href="https://github.com/axensz/autocoop-website/releases/download/setup/manual-usuario.pdf" class="flex items-center space-x-3 p-3 hover:opacity-80 transition-all whitespace-nowrap">
+						<div class="text-autocoop-blue text-xl">
+							<i class="fas fa-file-pdf"></i>
+						</div>
+						<span class="text-autocoop-blue font-semibold">Manual de Usuario</span>
+						<span class="text-gray-600 text-sm">(PDF)</span>
+					</a>
+					<a href="https://github.com/axensz/autocoop-website/releases/download/setup/manual-tecnico.pdf" class="flex items-center space-x-3 p-3 hover:opacity-80 transition-all whitespace-nowrap">
+						<div class="text-autocoop-blue text-xl">
+							<i class="fas fa-file-pdf"></i>
+						</div>
+						<span class="text-autocoop-blue font-semibold">Manual Técnico</span>
+						<span class="text-gray-600 text-sm">(PDF)</span>
+					</a>
 				</div>
 			</div>
 			

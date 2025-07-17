@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { downloadInfo } from '../data/download-info.ts';
+---
+
+<Layout title="Descarga AutoCoop - Gestión de Nóminas">
+	<Header />
+	
+	<!-- Download Page -->
+	<section class="py-20 bg-autocoop-gray min-h-screen">
+		<div class="container mx-auto px-6">
+			<div class="max-w-4xl mx-auto">
+				<!-- Download Status -->
+				<div class="bg-white rounded-2xl p-8 shadow-lg border border-autocoop-gray mb-8 text-center">
+					<div class="mb-6">
+						<div class="w-24 h-24 bg-autocoop-blue rounded-full flex items-center justify-center mx-auto mb-4">
+							<i class="fas fa-download text-3xl text-white"></i>
+						</div>
+						<h1 id="download-title" class="text-3xl font-bold text-autocoop-blue mb-2">Preparando descarga...</h1>
+						<p id="download-subtitle" class="text-gray-600">Tu descarga comenzará en <span id="countdown">3</span> segundos</p>
+					</div>
+					
+					<!-- Download Info -->
+					<div class="grid md:grid-cols-3 gap-4 text-sm text-gray-600 mb-6">
+						<div>
+							<strong>Archivo:</strong> {downloadInfo.filename}
+						</div>
+						<div>
+							<strong>Tamaño:</strong> {downloadInfo.size}
+						</div>
+						<div>
+							<strong>Versión:</strong> {downloadInfo.version}
+						</div>
+					</div>
+					
+					<!-- Manual Download Link -->
+					<div class="border-t border-autocoop-gray pt-6">
+						<p class="text-gray-600 mb-4">¿No se inició la descarga automáticamente?</p>
+						<a href={downloadInfo.downloadUrl} id="manual-download" class="btn-primary px-6 py-3 rounded-lg font-semibold text-autocoop-blue hover:text-autocoop-blue inline-flex items-center" download={downloadInfo.filename}>
+							<i class="fas fa-download mr-2"></i>
+							Descargar Manualmente
+						</a>
+					</div>
+				</div>
+				
+				<!-- Release Notes -->
+				<div class="bg-white rounded-2xl p-8 shadow-lg border border-autocoop-gray">
+					<h2 class="text-2xl font-bold text-autocoop-blue mb-6">
+						<i class="fas fa-clipboard-list mr-2"></i>
+						Notas de la Versión {downloadInfo.version}
+					</h2>
+					
+					<!-- New Features -->
+					<div class="mb-6">
+						<h3 class="text-lg font-semibold text-autocoop-blue mb-3">
+							Nuevas Características
+						</h3>
+						<ul class="space-y-2 text-gray-600">
+							{downloadInfo.releaseNotes.newFeatures.map(feature => (
+								<li class="flex items-start">
+									<i class="fas fa-plus-circle text-green-500 mt-1 mr-2"></i>
+									{feature}
+								</li>
+							))}
+						</ul>
+					</div>
+					
+					<!-- Improvements -->
+					<div class="mb-6">
+						<h3 class="text-lg font-semibold text-autocoop-blue mb-3">
+							Mejoras
+						</h3>
+						<ul class="space-y-2 text-gray-600">
+							{downloadInfo.releaseNotes.improvements.map(improvement => (
+								<li class="flex items-start">
+									<i class="fas fa-arrow-up text-blue-500 mt-1 mr-2"></i>
+									{improvement}
+								</li>
+							))}
+						</ul>
+					</div>
+					
+					<!-- Bug Fixes -->
+					<div class="mb-6">
+						<h3 class="text-lg font-semibold text-autocoop-blue mb-3">
+							Correcciones
+						</h3>
+						<ul class="space-y-2 text-gray-600">
+							{downloadInfo.releaseNotes.bugFixes.map(fix => (
+								<li class="flex items-start">
+									<i class="fas fa-bug text-red-500 mt-1 mr-2"></i>
+									{fix}
+								</li>
+							))}
+						</ul>
+					</div>
+					
+					<!-- System Requirements -->
+					<div class="border-t border-autocoop-gray pt-6">
+						<h3 class="text-lg font-semibold text-autocoop-blue mb-3">Requisitos del Sistema</h3>
+						<div class="grid md:grid-cols-2 gap-4 text-sm">
+							<div>
+								<h4 class="font-semibold text-gray-700 mb-2">Mínimos:</h4>
+								<ul class="space-y-1 text-gray-600">
+									{downloadInfo.systemRequirements.minimum.map(req => (
+										<li>• {req}</li>
+									))}
+								</ul>
+							</div>
+							<div>
+								<h4 class="font-semibold text-gray-700 mb-2">Recomendados:</h4>
+								<ul class="space-y-1 text-gray-600">
+									{downloadInfo.systemRequirements.recommended.map(req => (
+										<li>• {req}</li>
+									))}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<Footer />
+	
+	<!-- Download Script -->
+	<script define:vars={{ downloadInfo }}>
+		// URL de descarga real
+		const downloadUrl = downloadInfo.downloadUrl;
+		
+		// Countdown and download message
+		let countdown = 3;
+		const countdownElement = document.getElementById('countdown');
+		const titleElement = document.getElementById('download-title');
+		const subtitleElement = document.getElementById('download-subtitle');
+		
+		// Función para iniciar descarga automática
+		function startDownload() {
+			// Crear un enlace temporal para descargar
+			const tempLink = document.createElement('a');
+			tempLink.href = downloadUrl;
+			tempLink.download = downloadInfo.filename;
+			document.body.appendChild(tempLink);
+			tempLink.click();
+			document.body.removeChild(tempLink);
+		}
+		
+		const countdownInterval = setInterval(() => {
+			countdown--;
+			if (countdownElement) {
+				countdownElement.textContent = countdown.toString();
+			}
+			
+			if (countdown <= 0) {
+				clearInterval(countdownInterval);
+				if (titleElement) titleElement.textContent = '¡Descarga Iniciada!';
+				if (subtitleElement) subtitleElement.textContent = 'AutoCoop se está descargando...';
+				// Iniciar descarga automática
+				startDownload();
+			}
+		}, 1000);
+		
+		// Manual download click handler
+		const manualDownloadBtn = document.getElementById('manual-download');
+		if (manualDownloadBtn) {
+			manualDownloadBtn.addEventListener('click', (e) => {
+				// Stop countdown if running
+				clearInterval(countdownInterval);
+				// Trigger download message immediately
+				if (titleElement) titleElement.textContent = '¡Descarga Iniciada!';
+				if (subtitleElement) subtitleElement.textContent = 'AutoCoop se está descargando...';
+				// No need to prevent default since the link now has a real href
+			});
+		}
+	</script>
+</Layout>
