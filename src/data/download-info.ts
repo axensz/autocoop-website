@@ -56,12 +56,12 @@ export const downloadInfo = {
     userManual: {
       title: "Manual de Usuario",
       filename: "Manual de Usuario - Autocoop.pdf",
-      path: "https://drive.google.com/uc?export=download&id=17woZGx52kP0AWJcVoNU-Y_VxSpqz0ITj"
+      path: "https://github.com/axensz/autocoop-website/raw/2fec50ca07bc23ba8dec161d0067b1b45e14682c/public/docs/Manual%20de%20Usuario%20-%20Autocoop.pdf"
     },
     technicalManual: {
       title: "Manual Técnico", 
       filename: "Manual de Usuario - Autocoop.pdf",
-      path: "/docs/Manual de Usuario - Autocoop.pdf"
+      path: "https://github.com/axensz/autocoop-website/raw/2fec50ca07bc23ba8dec161d0067b1b45e14682c/public/docs/Manual%20T%C3%A9cnico%20-%20AutoCoop.pdf"
     }
   }
 };
