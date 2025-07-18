@@ -3,29 +3,30 @@
 import { Image } from 'astro:assets';
 import iconImage from '../assets/icon.png';
 
-// Detect if we're on the home page or another page
-const isHomePage = Astro.url.pathname === '/' || Astro.url.pathname === '/autocoop-website/' || Astro.url.pathname.endsWith('/');
-const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+const { url } = Astro;
+const base = import.meta.env.BASE_URL;
 
-// Build navigation links based on current page
-const homeLink = isHomePage ? '#inicio' : baseUrl;
-const featuresLink = isHomePage ? '#caracteristicas' : `${baseUrl}#caracteristicas`;
-const downloadsLink = isHomePage ? '#descargas' : `${baseUrl}#descargas`;
+// Correctly determine if it's the home page, considering the base path
+const isHomePage = url.pathname === base || url.pathname === `${base}/`;
+
+// Build navigation links dynamically
+const featuresLink = isHomePage ? '#features' : `${base}#features`;
+const downloadsLink = isHomePage ? '#downloads' : `${base}#downloads`;
 ---
 
 <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-sm shadow-md z-50">
 	<div class="container mx-auto px-6 py-3 flex justify-between items-center">
 		<!-- Logo -->
-		<a href="/" class="flex items-center space-x-2">
-			<img src={`${baseUrl}assets/icon.png`} alt="AutoCoop Logo" class="h-10 w-10">
+		<a href={base} class="flex items-center space-x-2">
+			<Image src={iconImage} alt="AutoCoop Logo" width={40} height={40} class="h-10 w-10" loading="eager" />
 			<span class="text-2xl font-bold text-autocoop-blue">AutoCoop</span>
 		</a>
 		
 		<!-- Navigation -->
 		<nav class="hidden md:flex items-center space-x-8">
-			<a href="/#features" class="text-gray-600 hover:text-autocoop-blue transition-colors duration-300">Características</a>
-			<a href="/#downloads" class="text-gray-600 hover:text-autocoop-blue transition-colors duration-300">Descargas</a>
-			<a href="/#downloads" class="text-gray-600 hover:text-autocoop-blue transition-colors duration-300">Documentación</a>
+			<a href={base} class="text-gray-600 hover:text-autocoop-blue transition-colors duration-300">Inicio</a>
+			<a href={featuresLink} class="text-gray-600 hover:text-autocoop-blue transition-colors duration-300">Características</a>
+			<a href={downloadsLink} class="text-gray-600 hover:text-autocoop-blue transition-colors duration-300">Descargas</a>
 		</nav>
 		
 		<!-- Mobile Menu Button -->
@@ -36,15 +37,15 @@ const downloadsLink = isHomePage ? '#descargas' : `${baseUrl}#descargas`;
 	
 	<!-- Mobile Menu -->
 	<div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-sm">
-		<a href="/#features" class="block py-3 px-6 text-gray-700 hover:bg-autocoop-gray">Características</a>
-		<a href="/#downloads" class="block py-3 px-6 text-gray-700 hover:bg-autocoop-gray">Descargas</a>
-		<a href="/#downloads" class="block py-3 px-6 text-gray-700 hover:bg-autocoop-gray">Documentación</a>
+		<a href={base} class="block py-3 px-6 text-gray-700 hover:bg-autocoop-gray">Inicio</a>
+		<a href={featuresLink} class="block py-3 px-6 text-gray-700 hover:bg-autocoop-gray">Características</a>
+		<a href={downloadsLink} class="block py-3 px-6 text-gray-700 hover:bg-autocoop-gray">Descargas</a>
 	</div>
 </header>
 
 <script>
 	// Mobile Menu Toggle
-	const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+	const mobileMenuBtn = document.getElementById('mobile-menu-button');
 	const mobileMenu = document.getElementById('mobile-menu');
 	
 	if (mobileMenuBtn && mobileMenu) {
