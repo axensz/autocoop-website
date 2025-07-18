@@ -185,16 +185,31 @@ import Footer from '../components/Footer.astro';
 	
 	<!-- Download Script -->
 	<script>
-		// Progress bar animation
+		const progressBar = document.getElementById('progress-bar');
+		const manualDownloadButton = document.getElementById('manual-download');
+		const h1 = document.querySelector('h1');
+		const p = document.querySelector('h1 + p');
+		let downloadInterval;
+
 		function animateProgress() {
-			const progressBar = document.getElementById('progress-bar');
+			if (!progressBar) return;
+
+			if (downloadInterval) {
+				clearInterval(downloadInterval);
+			}
+			
 			let width = 0;
-			const interval = setInterval(() => {
+			progressBar.style.width = '0%';
+
+			downloadInterval = setInterval(() => {
 				if (width >= 100) {
-					clearInterval(interval);
-					// Show completion message
-					document.querySelector('h1').textContent = '¡Descarga Completada!';
-					document.querySelector('h1 + p').textContent = 'AutoCoop para macOS se ha descargado exitosamente.';
+					clearInterval(downloadInterval);
+					if (h1) {
+						h1.textContent = '¡Descarga Completada!';
+					}
+					if (p) {
+						p.textContent = 'AutoCoop para macOS se ha descargado exitosamente.';
+					}
 				} else {
 					width += Math.random() * 15 + 5; // Random increment between 5-20
 					if (width > 100) width = 100;
@@ -209,13 +224,14 @@ import Footer from '../components/Footer.astro';
 		}, 1000);
 		
 		// Manual download click handler
-		document.getElementById('manual-download').addEventListener('click', (e) => {
-			e.preventDefault();
-			// Here you would trigger the actual download
-			// For now, just restart the animation
-			document.getElementById('progress-bar').style.width = '0%';
-			setTimeout(animateProgress, 500);
-		});
+		if (manualDownloadButton) {
+			manualDownloadButton.addEventListener('click', (e) => {
+				e.preventDefault();
+				// Here you would trigger the actual download
+				// For now, just restart the animation
+				animateProgress();
+			});
+		}
 		
 		// Auto-redirect after completion (optional)
 		setTimeout(() => {
