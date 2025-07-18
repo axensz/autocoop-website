@@ -1,0 +1,26 @@
+
+---
+const { downloadInfo, baseUrl } = Astro.props;
+---
+
+<div class="mb-8">
+    <h3 class="text-2xl font-bold text-autocoop-blue mb-6 text-center">
+        Documentación
+    </h3>
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-8 max-w-4xl mx-auto">
+        <a href={downloadInfo.documentation.userManual.path.startsWith('http') ? downloadInfo.documentation.userManual.path : `${baseUrl.slice(0, -1)}${downloadInfo.documentation.userManual.path}`} class="flex items-center space-x-3 p-3 hover:opacity-80 transition-all whitespace-nowrap" download>
+            <div class="text-autocoop-blue text-xl">
+                <i class="fas fa-file-pdf"></i>
+            </div>
+            <span class="text-autocoop-blue font-semibold">{downloadInfo.documentation.userManual.title}</span>
+            <span class="text-gray-600 text-sm">(PDF)</span>
+        </a>
+        <a href={downloadInfo.documentation.technicalManual.path.startsWith('http') ? downloadInfo.documentation.technicalManual.path : `${baseUrl.slice(0, -1)}${downloadInfo.documentation.technicalManual.path}`} class="flex items-center space-x-3 p-3 hover:opacity-80 transition-all whitespace-nowrap" download>
+            <div class="text-autocoop-blue text-xl">
+                <i class="fas fa-file-pdf"></i>
+            </div>
+            <span class="text-autocoop-blue font-semibold">{downloadInfo.documentation.technicalManual.title}</span>
+            <span class="text-gray-600 text-sm">(PDF)</span>
+        </a>
+    </div>
+</div>

@@ -17,7 +17,7 @@ const downloadsLink = isHomePage ? '#descargas' : `${baseUrl}#descargas`;
 	<div class="container mx-auto px-6 py-3 flex justify-between items-center">
 		<!-- Logo -->
 		<a href="/" class="flex items-center space-x-2">
-			<img src="/assets/icon.png" alt="AutoCoop Logo" class="h-10 w-10">
+			<img src={`${baseUrl}assets/icon.png`} alt="AutoCoop Logo" class="h-10 w-10">
 			<span class="text-2xl font-bold text-autocoop-blue">AutoCoop</span>
 		</a>
 		
@@ -25,7 +25,7 @@ const downloadsLink = isHomePage ? '#descargas' : `${baseUrl}#descargas`;
 		<nav class="hidden md:flex items-center space-x-8">
 			<a href="/#features" class="text-gray-600 hover:text-autocoop-blue transition-colors duration-300">Características</a>
 			<a href="/#downloads" class="text-gray-600 hover:text-autocoop-blue transition-colors duration-300">Descargas</a>
-			<a href="/docs/Manual de Usuario - Autocoop.pdf" target="_blank" class="text-gray-600 hover:text-autocoop-blue transition-colors duration-300">Documentación</a>
+			<a href="/#downloads" class="text-gray-600 hover:text-autocoop-blue transition-colors duration-300">Documentación</a>
 		</nav>
 		
 		<!-- Mobile Menu Button -->
@@ -38,7 +38,7 @@ const downloadsLink = isHomePage ? '#descargas' : `${baseUrl}#descargas`;
 	<div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-sm">
 		<a href="/#features" class="block py-3 px-6 text-gray-700 hover:bg-autocoop-gray">Características</a>
 		<a href="/#downloads" class="block py-3 px-6 text-gray-700 hover:bg-autocoop-gray">Descargas</a>
-		<a href="/docs/Manual de Usuario - Autocoop.pdf" target="_blank" class="block py-3 px-6 text-gray-700 hover:bg-autocoop-gray">Documentación</a>
+		<a href="/#downloads" class="block py-3 px-6 text-gray-700 hover:bg-autocoop-gray">Documentación</a>
 	</div>
 </header>
 

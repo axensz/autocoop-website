@@ -1,5 +1,5 @@
 {
-  "extends": "astro/tsconfigs/base",
+  // "extends": "astro/tsconfigs/base", // Comentado porque no se encuentra el archivo
   "include": [
     ".astro/types.d.ts",
     "**/*.ts",
@@ -16,6 +16,7 @@
     "jsx": "preserve",
     "jsxImportSource": "astro",
     "skipLibCheck": true,
+    "module": "esnext",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
