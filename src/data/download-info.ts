@@ -5,7 +5,7 @@ export const downloadInfo = {
   version: "1.0.0",
   filename: "AutoCoop.Setup.1.0.0.exe",
   size: "~265 MB",
-  downloadUrl: "https://github.com/axensz/autocoop-website/releases/download/setup/AutoCoop.Setup.1.0.0.exe",
+  downloadUrl: "https://github.com/axensz/autocoop-website/releases/download/1.0.0/AutoCoop.Setup.1.0.0.exe",
   
   // Release notes
   releaseNotes: {
